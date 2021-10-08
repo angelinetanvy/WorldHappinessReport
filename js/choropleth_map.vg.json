@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": " ",
   "width": 800,
   "height": 600,
   "data": {
@@ -10,12 +9,15 @@
       "feature": "ne_110m_admin_0_countries"
     }
   },
+  "projection": {
+    "type": "equirectangular"
+  },
   "transform": [
     {
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://github.com/angelinetanvy/WorldHappinessReport/blob/master/data/2019.csv"
+          "url": "data/2016.csv"
         },
         "key": "Country",
         "fields": ["Happiness_Score"]
@@ -23,10 +25,7 @@
     },
     { "calculate": "datum.Happiness_Score", "as": "Happiness Score" }
   ],
-  "projection": {
-    "type": "equirectangular"
-  },
-  "params": [{"name": "paintbrush", "select": "point"}],
+  "params": [{"name": "paintbrush", "select": {"type": "point", "on":"mouseover"}}],
   "mark": {
     "type": "geoshape"
   },

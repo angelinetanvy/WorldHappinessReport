@@ -16,29 +16,12 @@
 <div id="choropleth_map" style="position: absolute;"></div>
 <h1 id="annotate1" style="font-size: 22pt;position: absolute;top: 7%; right: 55%;">World Happiness Score 2019</h1>
 
-<h1 id="annotate1" style="font-size: 13pt;position: absolute;top: 26%; right: 54%;">1st: Finland</h1>
-<p1 style="font-size: 10pt;position: absolute;top: 30%; right: 53%;">Happiness Score: 7.769</p1>
-<svg height="100" width="100" style="position: absolute;top:28%;right:60%">
-<line x1="125" y1="0" x2="55" y2="100" style="stroke:rgb(0,0,0);stroke-width:1;"></line>
-</svg>
-
-<h1 id="annotate2" style="font-size: 13pt;position: absolute;top: 28%; right: 66%;">2nd: Norway</h1>
-<p1 style="font-size: 10pt;position: absolute;top: 32%; right: 65%;">Happiness Score: 7.554</p1>
-<svg height="65" width="50" style="position: absolute;top:35%;right:65.5%">
-  <line x1="0" y1="0" x2="50" y2="65" style="stroke:rgb(0,0,0);stroke-width:1;" />
-</svg>
-
-<h1 id="annotate3" style="font-size: 13pt;position: absolute;top: 23%; right: 81%;">3rd: Canada</h1>
-<p1 style="font-size: 10pt;position: absolute;top: 27%; right: 80%;">Happiness Score: 7.278</p1>
-<svg height="70" width="50" style="position: absolute;top:30%;right:83%">
-  <line x1="28" y1="0" x2="50" y2="70" style="stroke:rgb(0,0,0);stroke-width:1;" />
-</svg>
 
 <script type="text/javascript">
 
-  var spec2 = "js/choropleth_map.vg.json";
+  var spec2 = "js/equal+boxplot.json";
   vegaEmbed('#choropleth_map', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    console.log(result)
   }).catch(console.error);
 
 
