@@ -1,0 +1,204 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "#b6bde0",
+    "vconcat":[
+        {
+            "hconcat":[
+                {
+                  "width": 600,
+                  "height": 290,
+                  "title":{
+                    "text":"2016",
+                    "fontSize":18
+                  },
+                  "data": {
+                    "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+                    "format": {
+                      "type": "topojson",
+                      "feature": "ne_110m_admin_0_countries"
+                    }
+                  },
+                  "projection": {
+                    "type": "equirectangular"
+                  },
+                  "transform": [
+                    {
+                      "lookup": "properties.NAME",
+                      "from": {
+                        "data": {
+                          "url": "data/2016.csv"
+                        },
+                        "key": "Country",
+                        "fields": ["Happiness_Score"]
+                      }
+                    },
+                    { "calculate": "datum.Happiness_Score", "as": "Happiness Score" }
+                  ],
+                  "params": [{"name": "paintbrush", "select": {"type": "point","on":"mouseover"}}],
+                  "mark": {"type": "geoshape"},
+                  "encoding": {
+                    "color": {
+                      "condition": {
+                        "field": "Happiness Score",
+                        "type": "quantitative",
+                        "scale": { "type": "log","scheme": "darkblue" },
+                        "param": "paintbrush"
+                      },
+                      "value": "grey"
+                    },
+                    "tooltip": [
+                      { "field": "properties.NAME", "type": "nominal", "title": "Country" }
+                    ]
+                  }
+                },
+                {
+                  "width": 600,
+                  "height": 290,
+                  "title":{
+                    "text":"2017",
+                    "fontSize":18
+                  },
+                  "data": {
+                    "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+                    "format": {
+                      "type": "topojson",
+                      "feature": "ne_110m_admin_0_countries"
+                    }
+                  },
+                  "projection": {
+                    "type": "equirectangular"
+                  },
+                  "transform": [
+                    {
+                      "lookup": "properties.NAME",
+                      "from": {
+                        "data": {
+                          "url": "data/2017.csv"
+                        },
+                        "key": "Country",
+                        "fields": ["Happiness_Score"]
+                      }
+                    },
+                    { "calculate": "datum.Happiness_Score", "as": "Happiness Score" }
+                  ],
+                  "params": [{"name": "paintbrush", "select": {"type": "point"}}],
+                  "mark": {"type": "geoshape"},
+                  "encoding": {
+                    "color": {
+                      "condition": {
+                        "field": "Happiness Score",
+                        "type": "quantitative",
+                        "scale": { "type": "log" },
+                        "param": "paintbrush"
+                      },
+                      "value": "grey"
+                    },
+                    "tooltip": [
+                      { "field": "properties.NAME", "type": "nominal", "title": "Country" }
+                    ]
+                  }
+                }
+              ]
+        },        
+        {
+            "hconcat":[
+                {
+                  "width": 600,
+                  "height": 290,
+                  "title":{
+                    "text":"2018",
+                    "fontSize":18
+                  },
+                  "data": {
+                    "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+                    "format": {
+                      "type": "topojson",
+                      "feature": "ne_110m_admin_0_countries"
+                    }
+                  },
+                  "projection": {
+                    "type": "equirectangular"
+                  },
+                  "transform": [
+                    {
+                      "lookup": "properties.NAME",
+                      "from": {
+                        "data": {
+                          "url": "data/2018.csv"
+                        },
+                        "key": "Country",
+                        "fields": ["Happiness_Score"]
+                      }
+                    },
+                    { "calculate": "datum.Happiness_Score", "as": "Happiness Score" }
+                  ],
+                  "params": [{"name": "paintbrush", "select": {"type": "point"}}],
+                  "mark": {"type": "geoshape"},
+                  "encoding": {
+                    "color": {
+                      "condition": {
+                        "field": "Happiness Score",
+                        "type": "quantitative",
+                        "scale": { "type": "log" },
+                        "param": "paintbrush"
+                      },
+                      "value": "grey"
+                    },
+                    "tooltip": [
+                      { "field": "properties.NAME", "type": "nominal", "title": "Country" }
+                    ]
+                  }
+                },
+                {
+                  "width": 600,
+                  "height": 290,
+                  "title":{
+                    "text":"2019",
+                    "fontSize":18
+                  },
+                  "data": {
+                    "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+                    "format": {
+                      "type": "topojson",
+                      "feature": "ne_110m_admin_0_countries"
+                    }
+                  },
+                  "projection": {
+                    "type": "equirectangular"
+                  },
+                  "transform": [
+                    {
+                      "lookup": "properties.NAME",
+                      "from": {
+                        "data": {
+                          "url": "data/2019.csv"
+                        },
+                        "key": "Country",
+                        "fields": ["Happiness_Score"]
+                      }
+                    },
+                    { "calculate": "datum.Happiness_Score", "as": "Happiness Score" }
+                  ],
+                  "params": [{"name": "paintbrush", "select": {"type": "point"}}],
+                  "mark": {"type": "geoshape"},
+                  "encoding": {
+                    "color": {
+                      "condition": {
+                        "field": "Happiness Score",
+                        "type": "quantitative",
+                        "scale": { "type": "log" },
+                        "param": "paintbrush"
+                      },
+                      "value": "grey"
+                    },
+                    "tooltip": [
+                      { "field": "properties.NAME", "type": "nominal", "title": "Country" }
+                    ]
+                  }
+                }
+              ]
+        }
+    ]
+  
+  }
+  

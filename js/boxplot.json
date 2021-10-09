@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 400,
+  "background": "#b6bde0",
+  "data": {"url": "data/penguins.json"},
+  "layer":[
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "x": {
+          "field": "Happiness_Score",
+          "type": "quantitative",
+          "scale": {"zero": false},
+          "axis": {"labelFontSize":15, "titleFontSize":13, "titlePadding":15}
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal",
+          "axis": {"labelFontSize":15,"labelAngle":0, "title":null}
+        },
+        "size": {"value": 50}
+      }
+    },
+    {
+      "encoding": {
+        "x": {
+          "aggregate": "mean",
+          "field": "Happiness_Score",
+          "type": "quantitative"
+        },
+        "color": {"value": "#960c1e"}
+      },
+      "layer": [{
+        "mark": "rule",
+        "encoding": {
+          "size": {"value": 3}
+        }
+        },
+        {
+          "mark":{
+            "type": "text",
+            "text": "AVERAGE",
+            "dx": 45,
+            "dy": -150,
+            "fontSize": 15,
+            "fontWeight":"bold"
+          }
+        }
+      ]
+    }
+  ]
+
+}

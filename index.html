@@ -11,19 +11,26 @@
 
 
 </head>
-<body>
+<body style="background-color:#b6bde0;">
 
-<div id="choropleth_map" style="position: absolute;"></div>
-<h1 id="annotate1" style="font-size: 22pt;position: absolute;top: 7%; right: 55%;">World Happiness Score 2019</h1>
+<div id="choropleth_map" style="position: absolute; "></div>
+<h1 id="annotate1" style="font-size: 22pt;position: absolute;top: 4%; left: 35%;">World Happiness Score 2015-2019</h1>
+
+<div id="boxplot" style="position: absolute;top:120%; left:20%"></div>
+<h1 id="annotate1" style="font-size: 22pt;position: absolute;top: 110%; left:40%">Happiest Countries 2015-2019</h1>
 
 
 <script type="text/javascript">
 
-  var spec2 = "js/equal+boxplot.json";
-  vegaEmbed('#choropleth_map', spec2).then(function(result) {
+  var spec1 = "js/boxplot.json";
+  vegaEmbed('#boxplot', spec1).then(function(result) {
     console.log(result)
   }).catch(console.error);
 
+  var spec2 = "js/periodical.json";
+  vegaEmbed('#choropleth_map', spec2).then(function(result) {
+    console.log(result)
+  }).catch(console.error);
 
 </script>
 

@@ -1,108 +1,108 @@
 [
     {
       "Country": "Canada",
-      "Happiness_Score": 7.328,
+      "Happiness_Score": 6.322,
       "Year": 2018
     },
     {
       "Country": "Norway",
-      "Happiness_Score": 7.594,
+      "Happiness_Score": 5.093,
       "Year": 2018
     },
     {
       "Country": "Finland",
-      "Happiness_Score": 7.632,
+      "Happiness_Score": 6.343,
       "Year": 2018
     },
     {
       "Country": "Switzerland",
-      "Happiness_Score": 7.487,
+      "Happiness_Score": 5.875,
       "Year": 2018
     },
     {
       "Country": "Iceland",
-      "Happiness_Score": 7.495,
+      "Happiness_Score": 5.915,
       "Year": 2018
     },
 
 
     {
       "Country": "Canada",
-      "Happiness_Score": 7.404,
+      "Happiness_Score": 6.005,
       "Year": 2016
     },
     {
       "Country": "Norway",
-      "Happiness_Score": 7.498,
+      "Happiness_Score": 5.314,
       "Year": 2016
     },
     {
       "Country": "Finland",
-      "Happiness_Score": 7.413,
+      "Happiness_Score": 6.739,
       "Year": 2016
     },
     {
       "Country": "Switzerland",
-      "Happiness_Score": 7.509,
+      "Happiness_Score": 5.835,
       "Year": 2016
     },
     {
       "Country": "Iceland",
-      "Happiness_Score": 7.501,
+      "Happiness_Score": 5.921,
       "Year": 2016
     },
 
 
     {
       "Country": "Canada",
-      "Happiness_Score": 7.3159,
+      "Happiness_Score": 6.0840,
       "Year": 2017
     },
     {
       "Country": "Norway",
-      "Happiness_Score": 7.5370,
+      "Happiness_Score": 5.2620,
       "Year": 2017
     },
     {
       "Country": "Finland",
-      "Happiness_Score": 7.4689,
+      "Happiness_Score": 6.5720,
       "Year": 2017
     },
     {
       "Country": "Switzerland",
-      "Happiness_Score": 7.4939,
+      "Happiness_Score": 5.8379,
       "Year": 2017
     },
     {
       "Country": "Iceland",
-      "Happiness_Score": 7.5040,
+      "Happiness_Score": 5.9907,
       "Year": 2017
     },
 
 
     {
       "Country": "Canada",
-      "Happiness_Score": 7.278,
+      "Happiness_Score": 5.339,
       "Year": 2019
     },
     {
       "Country": "Norway",
-      "Happiness_Score": 7.554,
+      "Happiness_Score": 5.192,
       "Year": 2019
     },
     {
       "Country": "Finland",
-      "Happiness_Score": 7.769,
+      "Happiness_Score": 6.262,
       "Year": 2019
     },
     {
       "Country": "Switzerland",
-      "Happiness_Score": 7.480,
+      "Happiness_Score": 5.895,
       "Year": 2019
     },
     {
       "Country": "Iceland",
-      "Happiness_Score": 7.494,
+      "Happiness_Score": 5.886,
       "Year": 2019
     }
   ]
