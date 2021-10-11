@@ -1,8 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
+  "width": 700,
   "height": 400,
   "background": "#b6bde0",
+  "config": {  
+    "axis": {"labelFont": "monospace", "titleFont": "monospace"},
+    "legend": {"labelFont": "monospace", "titleFont": "monospace"},
+    "header": {"labelFont": "monospace", "titleFont": "monospace"},
+    "mark": {"font": "monospace"},
+    "title": {"font": "monospace", "subtitleFont": "monospace"}},
   "data": {"url": "data/penguins.json"},
   "layer":[
     {
@@ -11,8 +17,9 @@
         "x": {
           "field": "Happiness_Score",
           "type": "quantitative",
+          "title": "Happiness Score",
           "scale": {"zero": false},
-          "axis": {"labelFontSize":15, "titleFontSize":13, "titlePadding":15}
+          "axis": {"labelFontSize":15, "titleFontSize":18, "titlePadding":15}
         },
         "y": {
           "field": "Country",
@@ -34,7 +41,13 @@
       "layer": [{
         "mark": "rule",
         "encoding": {
-          "size": {"value": 3}
+          "size": {"value": 3},
+          "tooltip":{
+            "aggregate": "mean",
+            "field": "Happiness_Score",
+            "type": "quantitative",
+            "title": "Happiness Score"
+          }
         }
         },
         {

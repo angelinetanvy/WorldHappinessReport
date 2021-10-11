@@ -1,8 +1,42 @@
 #choropleth_map {
-	top:100px;
+	top:200px;
 	bottom: 100px; 
 	left: 100px;
 	right: 100px;
-	/*height: 1000px;
-	width: 800px;*/
+	position: absolute;
+	font-family: Gerial;
+}
+
+#periodical_text{
+	font-size: 15pt;
+	position: absolute;
+	top: 15%; 
+	align-self: center;
+	font-family: Geliat;
+	text-align: center;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+#label{
+	font-size: 30pt;
+	font-family: Geliat;
+	text-align: center;
+	font-weight: bold;
+}
+
+#scatterplot{
+	font-family: Gerial;
+}
+
+@font-face {
+	font-family: Geliat;
+	src: url(assets/font/Geliat-ExtraBold.otf) format("opentype");
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: Geliat;
+	src: url(assets/font/Geliat-ExtraLight.otf) format("opentype");
+	font-weight: bold;
 }

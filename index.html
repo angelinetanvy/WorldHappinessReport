@@ -13,12 +13,18 @@
 </head>
 <body style="background-color:#b6bde0;">
 
-<div id="choropleth_map" style="position: absolute; "></div>
-<h1 id="annotate1" style="font-size: 22pt;position: absolute;top: 4%; left: 35%;">World Happiness Score 2016-2019</h1>
+<div id="choropleth_map"></div>
+<div id="label" style="padding-top: 25px;">World Happiness Score 2016-2019</div>
+<div id="periodical_text">
+  Over four years, the world have changed a lot as globalisation is growing very rapidly. 
+  Some countries might become more advanced, where some still trying to find peace in the midst of war.
+  These maps showed how happiness scores changed from 2016 to 2019 all over the globe.
+</div>
 
-<div id="boxplot" style="position: absolute;top:120%; left:20%"></div>
-<h1 id="annotate1" style="font-size: 22pt;position: absolute;top: 110%; left:40%">Happiest Countries 2016-2019</h1>
+<h1 id="label" style="padding-top: 820px; text-align: left;padding-left: 100px;">Happiest Countries 2016-2019</h1>
+<div id="boxplot" style="top:140%; padding-right: 100px;float: right;"></div>
 
+<div id="scatterplot" style="top:180%; padding-right: 100px;float: right; padding-bottom: 80px; padding-top: 50px;"></div>
 
 <script type="text/javascript">
 
@@ -29,6 +35,11 @@
 
   var spec2 = "js/periodical.json";
   vegaEmbed('#choropleth_map', spec2).then(function(result) {
+    console.log(result)
+  }).catch(console.error);
+
+  var spec3 = "js/scatterplot.json";
+  vegaEmbed('#scatterplot', spec3).then(function(result) {
     console.log(result)
   }).catch(console.error);
 

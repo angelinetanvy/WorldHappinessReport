@@ -1,0 +1,69 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "data/2016.csv"},
+    "width":400,
+    "height":400,
+    "background": "#b6bde0",
+    "config": {"font": "Gerial"},
+    "layer":[
+        {
+            "mark": "circle",
+            "params":[{
+                "name": "region_selec",
+                "select": {
+                    "type": "point",
+                    "fields": ["Region"]
+                },
+                "bind":{
+                    "input": "select",
+                    "options": [null,"Western Europe","North America","Southeastern Asia","Sub-Saharan Africa","Australia and New Zealand","Central and Eastern Europe", "Eastern Asia"],
+                    "name": "Region: "
+                }
+            }],
+            "encoding": {
+                "y": {"field": "Happiness_Score", "type": "quantitative"},
+                "x": {"field": "Economy", "type": "quantitative"},
+                "tooltip":{
+                    "field": "Country",
+                    "type": "nominal"
+                },
+                "color":{
+                    "condition":{
+                        "param": "region_selec",
+                        "field": "Region",
+                        "type": "nominal",
+                        "scale": {"scheme":"dark2"}
+                    },
+                    "value": "grey"
+                },
+                "size":{
+                    "value":80
+                },
+                "opacity":{
+                    "condition":{
+                        "param": "region_selec",
+                        "value":0.6
+                    },
+                    "value":0.2
+                }
+            }
+        },
+        {
+            "mark": "line",
+            "transform": [
+                {
+                  "on": "Happiness_Score",
+                  "loess": "Economy"
+                }
+            ],
+            "encoding": {
+                "y": {"field": "Happiness_Score", "type": "quantitative"},
+                "x": {"field": "Economy", "type": "quantitative"},
+                "color":{
+                    "value": "#7416f0"
+                }
+            }
+        }
+    ]
+
+}
