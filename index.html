@@ -13,18 +13,23 @@
 </head>
 <body style="background-color:#b6bde0;">
 
+<div id="label" style="padding-top: 40px;font-size: 48pt;">How Happy is The World?</div>  
+<div id="country_name" style="padding-top: 450px;font-size: 24pt;padding-left: 600px;">ASD</div>  
+<div id="globe" style="top:15%; padding-left: 100px;padding-bottom: 80px; padding-top: 100px; position: absolute;"></div>
+
 <div id="choropleth_map"></div>
-<div id="label" style="padding-top: 25px;">World Happiness Score 2016-2019</div>
-<div id="periodical_text">
+<div id="label" style="padding-top: 600px;">World Happiness Score 2016-2019</div>
+<div id="periodical_text" style="padding-top: 15px;">
   Over four years, the world have changed a lot as globalisation is growing very rapidly. 
   Some countries might become more advanced, where some still trying to find peace in the midst of war.
   These maps showed how happiness scores changed from 2016 to 2019 all over the globe.
 </div>
 
-<h1 id="label" style="padding-top: 820px; text-align: left;padding-left: 100px;">Happiest Countries 2016-2019</h1>
+<h1 id="label" style="padding-top: 820px; text-align: left;padding-left: 700px;">Happiest Countries 2016-2019</h1>
 <div id="boxplot" style="top:140%; padding-right: 100px;float: right;"></div>
 
-<div id="scatterplot" style="top:180%; padding-right: 100px;float: right; padding-bottom: 80px; padding-top: 50px;"></div>
+<h1 id="label" style="padding-top: 820px; text-align: left;padding-left: 100px;">Can Money Buy Happiness?</h1>
+<div id="scatterplot" style="top:140%; padding-right: 100px;padding-bottom: 80px; padding-top: 5px;"></div>
 
 <script type="text/javascript">
 
@@ -41,6 +46,15 @@
   var spec3 = "js/scatterplot.json";
   vegaEmbed('#scatterplot', spec3).then(function(result) {
     console.log(result)
+  }).catch(console.error);
+
+  var spec4 = "js/globe.json";
+  vegaEmbed('#globe', spec4).then(function(result) {
+    result.view.addEventListener('click', function(event, item) {
+      console.log(item.datum.properties.name)
+      var x = document.getElementById("country_name");
+      x.textContent = item.datum.properties.name;
+    });
   }).catch(console.error);
 
 </script>

@@ -16,7 +16,7 @@
                 },
                 "bind":{
                     "input": "select",
-                    "options": [null,"Western Europe","North America","Southeastern Asia","Sub-Saharan Africa","Australia and New Zealand","Central and Eastern Europe", "Eastern Asia"],
+                    "options": ["All","Western Europe","North America","Southeastern Asia","Middle East and Northern Africa","Sub-Saharan Africa","Australia and New Zealand","Central and Eastern Europe", "Eastern Asia", "Southern Asia", "Latin America and Caribbean"],
                     "name": "Region: "
                 }
             }],
@@ -32,17 +32,18 @@
                         "param": "region_selec",
                         "field": "Region",
                         "type": "nominal",
-                        "scale": {"scheme":"dark2"}
+                        "scale": {"scheme":"plasma"},
+                        "legend":null
                     },
                     "value": "grey"
                 },
                 "size":{
-                    "value":80
+                    "value":100
                 },
                 "opacity":{
                     "condition":{
                         "param": "region_selec",
-                        "value":0.6
+                        "value":0.8
                     },
                     "value":0.2
                 }
@@ -60,7 +61,7 @@
                 "y": {"field": "Happiness_Score", "type": "quantitative"},
                 "x": {"field": "Economy", "type": "quantitative"},
                 "color":{
-                    "value": "#7416f0"
+                    "value": "#4c13eb"
                 }
             }
         }

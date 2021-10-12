@@ -1,5 +1,5 @@
 #choropleth_map {
-	top:200px;
+	top:900px;
 	bottom: 100px; 
 	left: 100px;
 	right: 100px;
@@ -10,7 +10,6 @@
 #periodical_text{
 	font-size: 15pt;
 	position: absolute;
-	top: 15%; 
 	align-self: center;
 	font-family: Geliat;
 	text-align: center;
@@ -19,6 +18,13 @@
 }
 
 #label{
+	font-size: 30pt;
+	font-family: Geliat;
+	text-align: center;
+	font-weight: bold;
+}
+
+#country_name{
 	font-size: 30pt;
 	font-family: Geliat;
 	text-align: center;

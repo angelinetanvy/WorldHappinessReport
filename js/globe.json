@@ -1,0 +1,89 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "description": "A configurable map of countries of the world.",
+    "width": 500,
+    "height": 300,
+    "autosize": "none",
+  
+    "signals": [
+        { "name": "rotateX", "value": 0,
+         "bind": {"input": "range", "min": -180, "max": 180, "step": 1} },
+        { "name": "rotateY", "value": 0,
+        "bind": {"input": "range", "min": -90, "max": 90, "step": 1} },
+        { "name": "translate0", "update": "width / 2" },
+        { "name": "translate1", "update": "height / 2" }
+    ],
+    "projections": [
+      {
+        "name": "projection",
+        "type": "orthographic",
+        "scale": 150,
+        "rotate": [
+          {"signal": "rotateX"},
+          {"signal": "rotateY"}
+        ],
+        "translate": [
+          {"signal": "translate0"},
+          {"signal": "translate1"}
+        ]
+      }
+    ],
+  
+    "data": [
+      {
+        "name": "world",
+        "url": "data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      {
+        "name": "graticule",
+        "transform": [
+          { "type": "graticule" }
+        ]
+      }
+    ],
+  
+    "marks": [
+        {
+          "type": "shape",
+          "from": {"data": "graticule"},
+          "encode": {
+            "update": {
+              "strokeWidth": {"value": 1},
+              "strokeDash": {"value": [0,0]},
+              "stroke": {"value":"#c4f5f4"},
+              "fill": {"value": null}
+            }
+          },
+          "transform": [
+            { "type": "geoshape", "projection": "projection" }
+          ]
+        },
+        {
+          "params": [{"name": "paintbrush", "select": {"type": "point"}}],
+          "type": "shape",
+          "from": {"data": "world"},
+          "encode": {
+            "update": {
+                "strokeWidth": {"value": 1},
+                "stroke": {"value":"#777"},
+                "fill": {"value":"#3fd4cc"},
+                "zindex": {"value": 0}
+            },
+            "hover": {
+              "strokeWidth": {"value": 2},
+              "stroke": {"value": "#2b369e"},
+              "fill": {"value":"#2b369e"},
+              "zindex": {"value": 1}
+            }
+          },
+          "transform": [
+            { "type": "geoshape", "projection": "projection" }
+          ]
+        }
+    ]
+
+  }

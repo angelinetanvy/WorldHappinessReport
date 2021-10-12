@@ -40,10 +40,10 @@
                   "encoding": {
                     "color": {
                       "condition": {
+                        "param": "paintbrush",
                         "field": "Happiness Score",
                         "type": "quantitative",
-                        "scale": { "type": "log","scheme": "darkblue" },
-                        "param": "paintbrush"
+                        "scale": { "type": "log","scheme": "darkblue" }
                       },
                       "value": "grey"
                     },
