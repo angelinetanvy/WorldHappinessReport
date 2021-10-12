@@ -11,7 +11,9 @@
     }
   },
   "projection": {
-    "type": "equirectangular"
+    "type": "equirectangular",
+    "center":[75,22],
+    "scale":500
   },
   "layer":[
     {
@@ -55,7 +57,7 @@
           },
           "opacity": {
             "condition": {
-            "test": "datum['Region'] == 'North America'",
+            "test": "datum['Region'] == 'Southern Asia'",
             "value": 1
             },
             "value": 0
@@ -89,7 +91,7 @@
             "color": {"value": "black"},
             "opacity": {
               "condition": {
-              "test": "datum['Country'] == 'Denmark' || datum['Country'] == 'Switzerland' || datum['Country'] == 'Iceland'",
+              "test": "datum['Region'] == 'Southern Asia'",
               "value": 1
               },
               "value": 0

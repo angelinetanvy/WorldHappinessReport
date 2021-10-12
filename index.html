@@ -14,7 +14,7 @@
 <body style="background-color:#b6bde0;">
 
 <div id="label" style="padding-top: 0px;font-size: 48pt;">How Happy is The World?</div>  
-<div id="country_name" style="padding-top: 450px;font-size: 24pt;padding-left: 600px;">Malaysia</div>  
+<div id="country_name" style="padding-top: 450px;font-size: 24pt;padding-left: 500px;"></div>  
 <div id="globe" style="top:15%; padding-left: 100px;padding-bottom: 80px; padding-top: 100px; position: absolute;"></div>
 
 <div id="choropleth_map"></div>
@@ -50,17 +50,15 @@
 
   var spec4 = "js/globe.json";
   vegaEmbed('#globe', spec4).then(function(result) {
-    result.view.addEventListener('click', function(event, item) {
-      console.log(item.datum.properties.name)
-      var x = document.getElementById("country_name");
-      x.textContent = item.datum.properties.name;
-      exportToCsv("data/selected.csv",item.datum.properties.name)
-    });
   }).catch(console.error);
 
-  var spec5 = "js/country_map.json";
+  var spec5 = "js/Regions/Western_Europe.json";
   vegaEmbed('#country_map', spec5).then(function(result) {
-    console.log(result)
+    result.view.addEventListener('click', function(event, item) {
+      console.log(item.datum.properties.NAME)
+      var x = document.getElementById("country_name");
+      x.textContent = item.datum.properties.NAME;
+    });
   }).catch(console.error);
 
 </script>
