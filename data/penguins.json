@@ -1,0 +1,108 @@
+[
+    {
+      "Country": "Canada",
+      "Happiness_Score": 7.328,
+      "Year": 2018
+    },
+    {
+      "Country": "Norway",
+      "Happiness_Score": 7.594,
+      "Year": 2018
+    },
+    {
+      "Country": "Finland",
+      "Happiness_Score": 7.632,
+      "Year": 2018
+    },
+    {
+      "Country": "Switzerland",
+      "Happiness_Score": 7.487,
+      "Year": 2018
+    },
+    {
+      "Country": "Iceland",
+      "Happiness_Score": 7.495,
+      "Year": 2018
+    },
+
+
+    {
+      "Country": "Canada",
+      "Happiness_Score": 7.404,
+      "Year": 2016
+    },
+    {
+      "Country": "Norway",
+      "Happiness_Score": 7.498,
+      "Year": 2016
+    },
+    {
+      "Country": "Finland",
+      "Happiness_Score": 7.413,
+      "Year": 2016
+    },
+    {
+      "Country": "Switzerland",
+      "Happiness_Score": 7.509,
+      "Year": 2016
+    },
+    {
+      "Country": "Iceland",
+      "Happiness_Score": 7.501,
+      "Year": 2016
+    },
+
+
+    {
+      "Country": "Canada",
+      "Happiness_Score": 7.3159,
+      "Year": 2017
+    },
+    {
+      "Country": "Norway",
+      "Happiness_Score": 7.5370,
+      "Year": 2017
+    },
+    {
+      "Country": "Finland",
+      "Happiness_Score": 7.4689,
+      "Year": 2017
+    },
+    {
+      "Country": "Switzerland",
+      "Happiness_Score": 7.4939,
+      "Year": 2017
+    },
+    {
+      "Country": "Iceland",
+      "Happiness_Score": 7.5040,
+      "Year": 2017
+    },
+
+
+    {
+      "Country": "Canada",
+      "Happiness_Score": 7.278,
+      "Year": 2019
+    },
+    {
+      "Country": "Norway",
+      "Happiness_Score": 7.554,
+      "Year": 2019
+    },
+    {
+      "Country": "Finland",
+      "Happiness_Score": 7.769,
+      "Year": 2019
+    },
+    {
+      "Country": "Switzerland",
+      "Happiness_Score": 7.480,
+      "Year": 2019
+    },
+    {
+      "Country": "Iceland",
+      "Happiness_Score": 7.494,
+      "Year": 2019
+    }
+  ]

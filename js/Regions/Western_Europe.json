@@ -38,6 +38,16 @@
               "fields": ["Region"]
             }
           },
+          {
+            "lookup": "properties.NAME",
+            "from": {
+              "data": {
+                "url": "data/2016.csv"
+              },
+              "key": "Country",
+              "fields": ["Happiness_Rank"]
+            }
+          },
           { "calculate": "datum.Happiness_Score", "as": "Happiness Score" }
         ],
         "layer":[{
