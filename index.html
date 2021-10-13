@@ -15,26 +15,44 @@
 
 <div id="label" style="padding-top: 0px;font-size: 48pt;">How Happy is The World?</div>  
 <div id="region" style="padding-top: 80px;padding-left: 500px;">Western Europe</div>
-<div id="country_name" style="padding-top: 330px;font-size: 24pt;padding-left: 500px;"></div>  
-<div id="country_detail" style="padding-top: 10px;padding-left: 880px;"></div>  
+<div id="country_name" style="padding-top: 330px;font-size: 24pt;padding-left: 500px;">#Rank</div>  
+<div id="country_detail" style="padding-top: 10px;padding-left: 880px;">Happiness Score: </div>  
 <div id="globe" style="top:15%; padding-left: 100px;padding-bottom: 80px; padding-top: 100px; position: absolute;"></div>
 
 <div id="choropleth_map"></div>
-<div id="label" style="padding-top: 180px;">World Happiness Score 2016-2019</div>
-<div id="periodical_text" style="padding-top: 15px;">
+<div id="label" style="padding-top: 120px;">World Happiness Score 2016-2019</div>
+<div id="periodical_text" style="padding-top: 30px;">
   Over four years, the world have changed a lot as globalisation is growing very rapidly. 
   Some countries might become more advanced, where some still trying to find peace in the midst of war.
   These maps showed how happiness scores changed from 2016 to 2019 all over the globe.
 </div>
 
-<h1 id="label" style="padding-top: 820px; text-align: left;padding-left: 700px;">Happiest Countries 2016-2019</h1>
-<div id="boxplot" style="top:140%; padding-right: 100px;float: right;"></div>
+<h1 id="label" style="padding-top: 820px; text-align: left;padding-left: 100px;">Happiest Countries 2016-2019</h1>
+<div id="boxplot" style="top:140%; padding-right: 100px;padding-left: 600px;"></div>
+<div id="periodical_text" style="padding-right: 1000px;padding-left: 150px;top: 245%;">
+  From 2016 to 2019, the countries that stay top 5 are Canada, Finland, Norway, Ireland, and Switzerland. In these four years,
+  we could see that Finland has the most changes, while Iceland barely changed. Refering to the average value of the five countries, 
+  Canada is the only country that is below average, in contrast to Iceland and Norway, where they never went below average.
+</div>
 
-<h1 id="label" style="padding-top: 520px; text-align: left;padding-left: 100px;">Can Money Buy Happiness?</h1>
+<h1 id="label" style="padding-top: 20px; text-align: left;padding-left: 100px;">Can Money Buy Happiness?</h1>
+<div id="periodical_text" style="padding-top: 30px; padding-left: 600px;">
+  When it comes to happiness, people often ask the question, "Can money buy happiness"? Does that mean that, if someone is rich,
+  that means that person will be happier than others? Some might agree, as money doesn't buy happiness but choices. However, looking at the statistic of
+  Economy per GDA of all countries compared to their happiness scores, it says otherwise. Turns out, money do buy happiness, as the relationship is linear.
+</div>
+<div id="periodical_text" style="padding-top: 170px; padding-left: 620px;font-weight: bold;font-size: 90pt;color: #305ba1;">
+  ❝
+</div>
+<div id="periodical_text" style="padding-top: 250px; padding-left: 700px;font-weight: bold;font-size: 22pt;color: #305ba1;">
+  People say money can't buy happiness, but it can make awfully comfortable while you're being miserable.
+</div>
+<div id="periodical_text" style="padding-top: 380px; padding-left: 1050px;font-weight: bold;font-size: 22pt;color: #1a3e75">
+  - Clare Boothe Luce -
+</div>
 <div id="scatterplot" style="top:140%; padding-left: 100px;padding-bottom: 80px; padding-top: 5px;"></div>
 <div id="country_map" style="top:15%; padding-left: 100px; padding-top: 100px; position: absolute;"></div>
 <script type="text/javascript">
-
   var spec1 = "js/boxplot.json";
   vegaEmbed('#boxplot', spec1).then(function(result) {
     console.log(result)
@@ -52,6 +70,14 @@
 
   var spec4 = "js/globe.json";
   vegaEmbed('#globe', spec4).then(function(result) {
+    result.view.addEventListener('click', function(event, item) {
+      console.log(item.datum.properties.name)
+      var name = item.datum.properties.name;
+      const lookupCSV = require('./node_modules/lookup-csv');
+      const lookupTable = lookupCSV('./data/2016.csv');
+      matchingRows = lookupTable.get(name);
+      console.log(matchingRows);
+    });
   }).catch(console.error);
 
   var spec5 = "js/Regions/Western_Europe.json";
