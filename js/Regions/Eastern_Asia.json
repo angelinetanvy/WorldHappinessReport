@@ -3,6 +3,12 @@
     "width": 600,
     "height": 300,
     "background": "#ffffff00",
+    "config": {  
+      "axis": {"labelFont": "monospace", "titleFont": "monospace"},
+      "legend": {"labelFont": "monospace", "titleFont": "monospace"},
+      "header": {"labelFont": "monospace", "titleFont": "monospace"},
+      "mark": {"font": "monospace"},
+      "title": {"font": "monospace", "subtitleFont": "monospace"}},
     "data": {
       "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
       "format": {

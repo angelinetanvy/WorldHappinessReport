@@ -3,26 +3,19 @@
     "data": {"url": "data/2016.csv"},
     "width":400,
     "height":400,
-    "background": "#b6bde0",
-    "config": {"font": "Gerial"},
+    "background": "#ffffff00",
+    "config": {  
+        "axis": {"labelFont": "monospace", "titleFont": "monospace"},
+        "legend": {"labelFont": "monospace", "titleFont": "monospace"},
+        "header": {"labelFont": "monospace", "titleFont": "monospace"},
+        "mark": {"font": "monospace"},
+        "title": {"font": "monospace", "subtitleFont": "monospace"}},
     "layer":[
         {
             "mark": "circle",
-            "params":[{
-                "name": "region_selec",
-                "select": {
-                    "type": "point",
-                    "fields": ["Region"]
-                },
-                "bind":{
-                    "input": "select",
-                    "options": ["All","Western Europe","North America","Southeastern Asia","Middle East and Northern Africa","Sub-Saharan Africa","Australia and New Zealand","Central and Eastern Europe", "Eastern Asia", "Southern Asia", "Latin America and Caribbean"],
-                    "name": "Region: "
-                }
-            }],
             "encoding": {
-                "y": {"field": "Happiness_Score", "type": "quantitative"},
-                "x": {"field": "Economy", "type": "quantitative"},
+                "y": {"field": "Happiness_Score", "type": "quantitative","axis": {"labelFontSize":15, "titleFontSize":18, "titlePadding":15}},
+                "x": {"field": "Economy", "type": "quantitative","axis": {"labelFontSize":13, "titleFontSize":18, "titlePadding":15}},
                 "tooltip":{
                     "field": "Country",
                     "type": "nominal"
@@ -50,6 +43,75 @@
             }
         },
         {
+            "params":[{
+                "name": "region_selec",
+                "select": {
+                    "type": "point",
+                    "fields": ["Region"]
+                },
+                "bind":{
+                    "input": "select",
+                    "options": ["All","Western Europe","North America","Southeastern Asia","Middle East and Northern Africa","Sub-Saharan Africa","Australia and New Zealand","Central and Eastern Europe", "Eastern Asia", "Southern Asia", "Latin America and Caribbean"],
+                    "name": "Region: "
+                }
+            }],
+            "data": {
+                "values": [
+                  {"a": 0.8, "b": 7.5, "label": "Western Europe"},
+                  {"a": 0.6, "b": 2.5, "label": "Sub-Saharan Africa"}
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "fontWeight":"bold"
+            },
+            "encoding": {
+                "y": {"field": "b", "type": "quantitative","scale":{"domain": [0,8]}},
+                "x": {"field": "a", "type": "quantitative","scale":{"domain": [0,2.0]}},
+                "text":{"field": "label"},
+                "size": {"value":18},
+                "color": {
+                    "condition": {"test": "datum.label == 'Sub-Saharan Africa'", "value": "#e08300"},
+                    "value": "#fff200"
+                },
+                "opacity":{
+                    "condition":{
+                        "param": "region_selec",
+                        "value":1.0
+                    },
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "data": {
+                "values": [
+                  {"a": 0.6, "b": 7.1, "label": "Highest income"},
+                  {"a": 0.6, "b": 2.1, "label": "Lowest income"}
+                ]
+            },
+            "mark": {
+                "type": "text"
+            },
+            "encoding": {
+                "y": {"field": "b", "type": "quantitative","scale":{"domain": [0,8]}},
+                "x": {"field": "a", "type": "quantitative","scale":{"domain": [0,2.0]}},
+                "text":{"field": "label"},
+                "size": {"value":18},
+                "color": {
+                    "condition": {"test": "datum.label == 'Lowest income'", "value": "#e08300"},
+                    "value": "#fff200"
+                },
+                "opacity":{
+                    "condition":{
+                        "param": "region_selec",
+                        "value":1.0
+                    },
+                    "value": 0.0
+                }
+            }
+        },
+        {
             "mark": "line",
             "transform": [
                 {
@@ -58,8 +120,8 @@
                 }
             ],
             "encoding": {
-                "y": {"field": "Happiness_Score", "type": "quantitative"},
-                "x": {"field": "Economy", "type": "quantitative"},
+                "y": {"field": "Happiness_Score", "type": "quantitative", "title":"Happiness Score"},
+                "x": {"field": "Economy", "type": "quantitative", "title": "Economy per GDA"},
                 "color":{
                     "value": "#4c13eb"
                 }

@@ -69,14 +69,14 @@
           "encode": {
             "update": {
                 "strokeWidth": {"value": 1},
-                "stroke": {"value":"#777"},
-                "fill": {"value":"#3fd4cc"},
+                "stroke": {"value":"#355070"},
+                "fill": {"value":"#3f6a9e"},
                 "zindex": {"value": 0}
             },
             "hover": {
               "strokeWidth": {"value": 2},
-              "stroke": {"value": "#2b369e"},
-              "fill": {"value":"#2b369e"},
+              "stroke": {"value": "#355070"},
+              "fill": {"value":"#355070"},
               "zindex": {"value": 1}
             }
           },

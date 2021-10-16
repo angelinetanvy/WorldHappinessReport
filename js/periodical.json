@@ -1,12 +1,17 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "background": "#b6bde0",
-    "config": {"font": "Gerial"},
+    "background": "#ffffff00",
+    "config": {  
+      "axis": {"labelFont": "monospace", "titleFont": "monospace"},
+      "legend": {"labelFont": "monospace", "titleFont": "monospace", "orient": "bottom"},
+      "header": {"labelFont": "monospace", "titleFont": "monospace"},
+      "mark": {"font": "monospace"},
+      "title": {"font": "monospace", "subtitleFont": "monospace"}},
     "vconcat":[
         {
             "hconcat":[
                 {
-                  "width": 600,
+                  "width": 700,
                   "height": 290,
                   "title":{
                     "text":"2016",
@@ -43,7 +48,7 @@
                         "param": "paintbrush",
                         "field": "Happiness Score",
                         "type": "quantitative",
-                        "scale": { "type": "log","scheme": "darkblue" }
+                        "scale": { "type": "log","scheme": "blues" }
                       },
                       "value": "grey"
                     },
@@ -53,7 +58,7 @@
                   }
                 },
                 {
-                  "width": 600,
+                  "width": 700,
                   "height": 290,
                   "title":{
                     "text":"2017",
@@ -82,7 +87,7 @@
                     },
                     { "calculate": "datum.Happiness_Score", "as": "Happiness Score" }
                   ],
-                  "params": [{"name": "paintbrush", "select": {"type": "point"}}],
+                  "params": [{"name": "paintbrush", "select": {"type": "point","on":"mouseover"}}],
                   "mark": {"type": "geoshape"},
                   "encoding": {
                     "color": {
@@ -104,7 +109,7 @@
         {
             "hconcat":[
                 {
-                  "width": 600,
+                  "width": 700,
                   "height": 290,
                   "title":{
                     "text":"2018",
@@ -133,7 +138,7 @@
                     },
                     { "calculate": "datum.Happiness_Score", "as": "Happiness Score" }
                   ],
-                  "params": [{"name": "paintbrush", "select": {"type": "point"}}],
+                  "params": [{"name": "paintbrush", "select": {"type": "point","on":"mouseover"}}],
                   "mark": {"type": "geoshape"},
                   "encoding": {
                     "color": {
@@ -151,7 +156,7 @@
                   }
                 },
                 {
-                  "width": 600,
+                  "width": 700,
                   "height": 290,
                   "title":{
                     "text":"2019",
@@ -180,7 +185,7 @@
                     },
                     { "calculate": "datum.Happiness_Score", "as": "Happiness Score" }
                   ],
-                  "params": [{"name": "paintbrush", "select": {"type": "point"}}],
+                  "params": [{"name": "paintbrush", "select": {"type": "point","on":"mouseover"}}],
                   "mark": {"type": "geoshape"},
                   "encoding": {
                     "color": {

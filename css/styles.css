@@ -7,18 +7,17 @@
 	font-family: Gerial;
 }
 
+body{
+	zoom:0.9;
+}
+
 #globe {
 	font-family: Gerial;
 }
 
 #periodical_text{
 	font-size: 15pt;
-	position: absolute;
-	align-self: center;
 	font-family: Geliat;
-	text-align: center;
-	padding-left: 100px;
-	padding-right: 100px;
 }
 
 #country_detail{
